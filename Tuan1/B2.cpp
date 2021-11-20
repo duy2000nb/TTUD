@@ -2,21 +2,29 @@
 
 using namespace std;
 
-const int MAX = 1000;
-
-long long int A[MAX];
+long long int F0, F1;
 
 long long int Fibo(int n){
-	A[0] = 0;
-	A[1] = 1;
+	F0 = 0;
+	F1 = 1;
 	
-	for(int i = 2; i <= n; i++){
-		A[i] = A[i-2] + A[i-1];
+	if(n == 0){
+		return F0;
 	}
 	
-	return A[n];
+	if(n == 1){
+		return F1;
+	}
+	
+	long long int F2;
+	for(int i = 2; i <= n; i++){
+		F2 = F0 + F1;
+		F0 = F1;
+		F1 = F2;
+	}
+	
+	return F2;
 }
-
 
 int main(){
 	int n;
