@@ -11,10 +11,7 @@ int demSoLanXuatHien(int *first, int *last, int k){
 	int *i = first;
 		
 	while(i != last){
-		if(*i != k){} 
-		else{
-			c++;
-		}
+		if(*i == k) c++;
 		i++;
 	}
 	return c;
